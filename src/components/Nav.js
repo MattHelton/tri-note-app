@@ -3,8 +3,11 @@ class Nav extends Component {
   state = {  }
   render() { 
     return (  
-      <div>
-        Nav Component
+      <div className="nav-container">
+        <div className="nav-logo">Note</div>
+        <div className="nav-button">
+          + Note
+        </div>
       </div>
     );
   }
