@@ -12,16 +12,23 @@ class Note extends Component {
   };
 
   renderTagForm = () => {
-    return (
-      <span>
-        Tag your note:
-        <i className="tag-button material-icons">add circle</i>
-      </span>
-    )
+    if (!this.props.newTag) {
+      return (
+        <span>
+          Tag your note:
+          <i 
+            className="tag-button material-icons"
+            onClick={() => this.props.showTagForm()}
+          >
+            add circle
+          </i>
+        </span>
+      )
+    }
   }
 
   render() { 
-    const {note} = this.props;
+    const { note } = this.props;
     return (
       <div className="note-container">
         <form className="note-form" onSubmit={(e) => this.onSubmit(e)}>
